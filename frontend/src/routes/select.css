@@ -1,0 +1,8 @@
+.select-page {
+  padding-block: var(--space-8);
+}
+
+/* The picks grid owns the page; pull its top margin off so it sits at the top. */
+.select-page .picks {
+  margin-top: 0;
+}

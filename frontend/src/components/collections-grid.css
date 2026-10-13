@@ -1,0 +1,139 @@
+.picks {
+  margin-top: 40px;
+}
+
+.picks__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: 20px;
+}
+
+.picks__title {
+  margin: 0;
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700;
+}
+
+.picks__nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Match the homepage «Наши подборки» nav arrows (.home-collections__nav). */
+.picks__nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 32px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  color: var(--color-gray);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+.picks__nav button:hover:not(:disabled) {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.picks__nav button:active:not(:disabled) {
+  border-color: var(--color-red);
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.picks__nav button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.picks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.pick {
+  position: relative;
+  display: block;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--color-gray-400);
+}
+
+.pick__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pick__placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-red);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.pick__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.12) 38%,
+    transparent 62%
+  );
+}
+
+.pick__name {
+  display: -webkit-box;
+  overflow: hidden;
+  max-width: 55%;
+  color: var(--color-white);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.pick__cta {
+  flex: 0 0 auto;
+  padding: 9px 18px;
+  border-radius: var(--radius);
+  background: var(--color-red);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.pick:hover .pick__cta {
+  background: #a80100;
+}
+
+@media (max-width: 991px) {
+  .picks__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .picks__grid {
+    grid-template-columns: 1fr;
+  }
+}

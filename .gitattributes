@@ -1,0 +1,7 @@
+# Shell scripts must use LF — they run inside Linux containers.
+*.sh text eol=lf
+
+# Binary assets: never normalize line endings.
+*.png binary
+*.jpg binary
+*.pdf binary

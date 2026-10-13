@@ -1,0 +1,63 @@
+.brand-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.brand-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 36px;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-black);
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.brand-sidebar__item:hover {
+  background: var(--color-gray-400);
+}
+
+.brand-sidebar__item.is-active {
+  border-color: var(--color-red);
+  background: var(--color-gray-400);
+}
+
+.brand-sidebar__logo {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.brand-sidebar__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* On tablet/mobile the sidebar becomes a horizontal, scrollable strip. */
+@media (max-width: 991px) {
+  .brand-sidebar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: var(--space-2);
+    padding-bottom: var(--space-1);
+  }
+
+  .brand-sidebar__item {
+    flex: 0 0 auto;
+    min-width: 96px;
+  }
+}

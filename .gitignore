@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.vite/
+*.local
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+!.env.prod.example
+
+# Docker / data
+postgres-data/
+redis-data/
+minio-data/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+_tz_temp.pdf
+
+# TS build cache
+*.tsbuildinfo
+
+# local reference shots / tooling
+photo/
+.claude/launch.json

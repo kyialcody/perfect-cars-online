@@ -1,0 +1,103 @@
+.price-range {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.price-range__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--color-gray);
+}
+
+.price-range__value {
+  font-size: 13px;
+  color: var(--color-black);
+  font-weight: 500;
+}
+
+/* Two range inputs stacked over a shared track; their thumbs stay clickable
+   while the (transparent) input tracks let the fill bar show through. */
+.price-range__track {
+  position: relative;
+  height: 24px;
+}
+
+.price-range__track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-gray-300);
+}
+
+.price-range__fill {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-red);
+}
+
+.price-range__track input[type="range"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  background: none;
+  pointer-events: none; /* re-enabled on the thumb below */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.price-range__track input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-red);
+  cursor: pointer;
+}
+
+.price-range__track input[type="range"]::-moz-range-thumb {
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-red);
+  cursor: pointer;
+}
+
+.price-range__inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.price-range__inputs input {
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  width: 100%;
+}
+
+.price-range__inputs input:focus {
+  outline: none;
+  border-color: var(--color-gray);
+}

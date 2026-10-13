@@ -1,0 +1,105 @@
+.catalog-filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.catalog-filters__conditions {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  background: var(--color-gray-400);
+  border-radius: var(--radius);
+  align-self: flex-start;
+}
+
+.catalog-filters__tab {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-gray);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.catalog-filters__tab.is-active {
+  background: var(--color-white);
+  color: var(--color-black);
+  font-weight: 500;
+}
+
+.catalog-filters__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.catalog-filters__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.catalog-filters__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 13px;
+  color: var(--color-gray);
+  /* Let the field shrink inside its grid track so wide selects don't push the
+     panel past its frame. */
+  min-width: 0;
+}
+
+.catalog-filters__field select,
+.catalog-filters__field input {
+  font: inherit;
+  font-size: 15px;
+  color: var(--color-black);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius);
+  background: var(--color-white);
+}
+
+.catalog-filters__field select:focus,
+.catalog-filters__field input:focus {
+  outline: none;
+  border-color: var(--color-gray);
+}
+
+.catalog-filters__show {
+  align-self: flex-start;
+  padding: 12px 32px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.catalog-filters__reset {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--color-red);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 1199px) {
+  .catalog-filters__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog-filters__grid {
+    grid-template-columns: 1fr;
+  }
+}

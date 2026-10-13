@@ -1,0 +1,176 @@
+.contacts-page {
+  padding-block: 36px 72px;
+}
+
+.contacts-page h1 {
+  margin: 0 0 22px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.contacts-page__muted {
+  color: var(--color-gray);
+}
+
+/* --- Phones / addresses row --------------------------------------------- */
+.contacts-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 96px;
+  margin-bottom: 36px;
+}
+
+.contacts-head__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-weight: 700;
+}
+
+.contacts-head__title svg {
+  color: var(--color-red);
+}
+
+.contacts-head__values {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--color-black);
+  font-size: 15px;
+}
+
+.contacts-head__values a {
+  color: var(--color-black);
+}
+
+.contacts-head__values a:hover {
+  color: var(--color-red);
+}
+
+/* --- Full-width map (copied from the homepage, read-only) ---------------- */
+/* Rendered as a direct child of the page (outside .container), so it spans the
+   full content width edge-to-edge — same as the homepage map. */
+.contacts-map {
+  margin: 0 0 56px;
+}
+
+/* --- About company ------------------------------------------------------- */
+.contacts-about h2 {
+  margin: 0 0 24px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.contacts-about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contacts-about__text {
+  color: var(--color-black);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.contacts-about__text p {
+  margin: 0 0 16px;
+}
+
+/* Photo carousel — banner-style arrows + progress bar, click to view. */
+.contacts-gallery {
+  position: relative;
+}
+
+.contacts-gallery__photo {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-gray-400);
+  cursor: zoom-in;
+}
+
+.contacts-gallery__photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.contacts-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--color-black);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.contacts-gallery__arrow:hover {
+  background: var(--color-white);
+  color: var(--color-red);
+}
+
+.contacts-gallery__arrow--prev {
+  left: 8px;
+}
+
+.contacts-gallery__arrow--next {
+  right: 8px;
+}
+
+.contacts-gallery__bar {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+}
+
+.contacts-gallery__bar span {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.contacts-gallery__bar span.is-active {
+  background: var(--color-red);
+}
+
+@media (max-width: 767px) {
+  .contacts-about__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 575px) {
+  .contacts-page {
+    padding-block: 28px 48px;
+  }
+
+  .contacts-head {
+    gap: 28px 48px;
+  }
+
+  .contacts-map {
+    margin-bottom: 40px;
+  }
+}

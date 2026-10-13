@@ -1,0 +1,86 @@
+"""ORM models package.
+
+Re-export every model so that `import app.models` registers them all on
+`Base.metadata` — Alembic autogenerate and any `create_all` rely on this.
+"""
+from app.models.catalog import (
+    BodyType,
+    Brand,
+    Car,
+    CarBenefit,
+    CarFeature,
+    CarGift,
+    CarImage,
+    Color,
+    Condition,
+    Drive,
+    EngineType,
+    FeatureBlock,
+    Model,
+    Transmission,
+    Trim,
+    car_color,
+)
+from app.models.home import (
+    AboutSalonPhoto,
+    BankPartner,
+    ContactAddress,
+    ContactInfo,
+    ContactPhone,
+    ContactPhoto,
+    DealerLocation,
+    HomeAbout,
+    HomeCollection,
+    HomePromo,
+    Requisite,
+    SocialLink,
+)
+from app.models.lead import Lead, LeadSource, LeadStatus
+from app.models.parts import (
+    Part,
+    PartCategory,
+    PartCondition,
+    PartImage,
+    PartKind,
+)
+from app.models.user import User
+
+__all__ = [
+    "User",
+    "BodyType",
+    "Brand",
+    "Car",
+    "CarBenefit",
+    "CarFeature",
+    "CarGift",
+    "CarImage",
+    "Color",
+    "Condition",
+    "Drive",
+    "EngineType",
+    "FeatureBlock",
+    "AboutSalonPhoto",
+    "BankPartner",
+    "ContactAddress",
+    "ContactInfo",
+    "ContactPhone",
+    "ContactPhoto",
+    "DealerLocation",
+    "HomeAbout",
+    "HomeCollection",
+    "HomePromo",
+    "Requisite",
+    "SocialLink",
+    "Lead",
+    "LeadSource",
+    "LeadStatus",
+    "Part",
+    "PartCategory",
+    "PartCondition",
+    "PartImage",
+    "PartKind",
+    "Model",
+    "Transmission",
+    "Trim",
+    "car_color",
+]
